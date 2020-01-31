@@ -1,0 +1,75 @@
+// REMINDER: import normalize
+@charset "UTF-8";
+//Typography
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
+// Color palette
+
+body {
+  font-family: 'Lato';
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  &.content__wrapper {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(12, 60px);
+      justify-content: center;
+      margin: auto;
+      padding: 0 32px 32px 32px;
+      max-width: 1329px;
+    }
+
+  &.bg__content {
+    background-image: url("https://ripio-cms-us.s3.amazonaws.com/filer_public/5e/84/5e84c573-701d-49f6-804f-e3921a203d35/index_hero.png");
+    background-repeat: no-repeat;
+    background-position: center bottom, 0px 2250px, 0px -1px, center top;
+    background-size: 100vw 492px, 100%, 100%, 100vw 298px;
+    z-index: -1;
+  }
+
+  .col__12 {
+    grid-column: auto / span 12;
+  }
+
+  .menu {
+    margin-top: 20px;
+    z-index: 99999;
+  }
+
+  .menu__left, .menu__right {
+    .menu__item {
+      &:first-child {
+        margin-right: 36px;
+      }
+
+      &:nth-child(2) {
+        margin-right: 27px;
+      }
+
+      &:nth-child(3) {
+        margin-right: 30px;
+      }
+      .dropdown {
+        position: relative;
+        .dropdown__button {
+          color: #373744;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+
+
+
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+}

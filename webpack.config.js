@@ -15,7 +15,31 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development',
-            template: './src/index.html'
+            filename: 'index.html',
+            template: 'src/index.pug'
         }),
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.pug$/,
+                use: ['html-loader?attrs=false', 'pug-html-loader']
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader"
+                ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+        ]
+    },
 };
