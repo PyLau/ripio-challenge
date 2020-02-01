@@ -12,16 +12,66 @@ html
             div.menu__left.flex.items-center
                 //u can do it better ->
                 div.menu__item
-                    img(src="https://ripio-cms-us.s3.amazonaws.com/filer_public/55/8e/558e23db-b6ad-43ce-9bcd-3a67e07b0244/logo_ripio.svg")
+                    svg(width='67' height='32' viewbox='0 0 68 32' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        g(clip-path='url(#clip0)')
+                            path(d='M5.86543 11.1765H5.90775C6.88122 9.39165 8.57421 8.62671 10.5635 8.62671H11.5369V13.5563C10.8174 13.1739 10.1402 13.0889 9.37838 13.0889C6.54262 13.0889 5.8231 14.9587 5.8231 17.466V23.2881H0.744141V8.7967H5.86543V11.1765Z' fill='#373744')
+                            path(d='M19.3247 8.79688H14.2034V23.2882H19.3247V8.79688Z' fill='#373744')
+                            path(d='M28.2975 10.4542H28.3398C29.271 9.00929 31.0063 8.32935 32.6993 8.32935C37.0164 8.32935 39.9791 11.9416 39.9791 16.1062C39.9791 20.2709 37.0164 23.7981 32.7416 23.7981C31.091 23.7981 29.3556 23.2032 28.2552 21.9283V29.8752L23.1762 32V8.79681H28.2975V10.4542ZM28.1282 16.0637C28.1282 17.8911 29.3556 19.2935 31.4296 19.2935C33.5035 19.2935 34.7309 17.8911 34.7309 16.0637C34.7309 14.2789 33.5035 12.7915 31.4296 12.7915C29.3133 12.7915 28.1282 14.2789 28.1282 16.0637Z' fill='#373744')
+                            path(d='M47.8092 8.79688H42.6879V23.2882H47.8092V8.79688Z' fill='#373744')
+                            path(d='M67.7441 16.0637C67.7441 20.9934 63.681 23.7556 59.0676 23.7556C54.4542 23.7556 50.391 20.9934 50.391 16.0637C50.391 11.1341 54.4542 8.32935 59.0676 8.32935C63.7233 8.32935 67.7441 11.1341 67.7441 16.0637ZM55.8086 16.0637C55.8086 17.8911 57.036 19.2935 59.1099 19.2935C61.1838 19.2935 62.4112 17.8911 62.4112 16.0637C62.4112 14.2789 61.1838 12.7915 59.1099 12.7915C56.9937 12.7915 55.8086 14.2789 55.8086 16.0637Z' fill='#373744')
+                            path(d='M19.3247 4.80212L14.3304 6.79947V2.03984L19.3247 0V4.80212Z' fill='#373744')
+                            path(d='M47.7669 4.80212L42.7726 6.79947V2.03984L47.7669 0V4.80212Z' fill='#373744')
+                        defs
+                            clippath#clip0
+                                rect(x='0.744141' width='67' height='32' fill='white')
+
                 div.menu__item
                     div.dropdown
-                        a.dropdown__button Comunidad
+                        a(href='').dropdown__button Comunidad
                 div.menu__item
                     div.dropdown
-                        a.dropdown__button Market
+                        a(href='').dropdown__button Market
                 div.menu__item
                     div.dropdown
-                        a.dropdown__button Más productos
-
-
-
+                        a(href='').dropdown__button Más productos
+                            svg.icon-chevron(width='11', height='11', viewBox='0 0 10 6', fill='none', xmlns='http://www.w3.org/2000/svg')
+                                path(d='M0.744141 1L4.74414 5L8.74414 1', stroke='black')
+            div.menu__right.flex.items-center
+                //u can do it better ->
+                div.menu__item
+                    a(href='') Ingresar
+                div.menu__item
+                    a(href='').button.outline Registrate
+        section.land__content.col__12
+            div.content__left.justify-start
+                h1
+                    span Descubrí la nueva economía digital
+                p.subtitle Empezá el camino de la innovación financiera.
+                a.button.outline Abrir mi cuenta
+            div.content__right
+        section.white__space.col__12
+        section.land__cripto.col__12
+            div.content__cripto
+                h2.middle-title Qué podés hacer en Ripio
+        section.land__info.col__12
+            div.info__description-section.col-5__start-2.items-center
+                h3.info-title Cuenta en pesos
+                p.info-description Activá tu cuenta digital gratis y gestioná tu dinero como prefieras.
+                a.button.gradient Más información
+            div.info__img-section.wallet.col-8__start-4
+        section.land__info.col__12
+            div.info__img-section.exchange.col-5__start-2
+            div.info__description-section.items-center.col-8__start-5
+                h3.info-title Exchange
+                p.info-description.side-margins-0 Compra y vende criptomonedas. <br> El precio lo pones tú.
+                a.button.gradient Más información
+        section.land__info.col__12
+            div.info__description-section.col-5__start-2.items-center
+                h3.info-title OTC
+                p.info-description Trading para instituciones e inversores mayoristas.
+                a.button.gradient Más información
+            div.info__img-section.otc.col-8__start-4
+        section.land__cards.col__12
+            p hi
+            p hello
+            p hao

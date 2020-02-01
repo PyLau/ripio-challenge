@@ -8,68 +8,236 @@ body {
   font-family: 'Lato';
   scroll-behavior: smooth;
   overflow-x: hidden;
-  &.content__wrapper {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(12, 60px);
-      justify-content: center;
-      margin: auto;
-      padding: 0 32px 32px 32px;
-      max-width: 1329px;
-    }
-
-  &.bg__content {
-    background-image: url("https://ripio-cms-us.s3.amazonaws.com/filer_public/5e/84/5e84c573-701d-49f6-804f-e3921a203d35/index_hero.png");
+  font-style: normal;
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #373744;
+  }
+  &.bg__content {//change name
+    background-image: url("../images/img-header@3x.png");
     background-repeat: no-repeat;
-    background-position: center bottom, 0px 2250px, 0px -1px, center top;
-    background-size: 100vw 492px, 100%, 100%, 100vw 298px;
+    background-position: 0 0;
+    background-size: 100%;
     z-index: -1;
   }
 
-  .col__12 {
-    grid-column: auto / span 12;
-  }
+  &.content__wrapper {//change name
+    color: #373744;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(12, 60px);
+    justify-content: center; //utility
+    margin: auto;
+    padding: 0 32px 32px 32px;
+    max-width: 1329px;
 
-  .menu {
-    margin-top: 20px;
-    z-index: 99999;
-  }
+    .menu {
+      display: flex; //utility
+      justify-content: space-between;
+      margin-top: 20px;
+      z-index: 99999;
+    }
 
-  .menu__left, .menu__right {
-    .menu__item {
-      &:first-child {
-        margin-right: 36px;
-      }
+    .menu__left, .menu__right {
+      .menu__item {
+        font-weight: 500;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 17px;
 
-      &:nth-child(2) {
-        margin-right: 27px;
-      }
 
-      &:nth-child(3) {
-        margin-right: 30px;
-      }
-      .dropdown {
-        position: relative;
-        .dropdown__button {
-          color: #373744;
-          font-weight: 500;
-          font-size: 14px;
+        &:first-child {
+          margin-right: 36px;
+        }
+
+        &:nth-child(2) {
+          margin-right: 27px;
+        }
+
+        &:nth-child(3) {
+          margin-right: 30px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .dropdown {
+          position: relative;
+          padding: .5rem;
+          .dropdown__button {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            svg.icon-chevron {
+              margin-left: .5rem;
+            }
+          }
+        }
+
+        a.button.outline {
+          border: 1px solid #000000;
+          box-sizing: border-box;
+          border-radius: 50px;
+          background-color: transparent;
+          background-image: none;
           line-height: 17px;
-          padding-top: 1rem;
-          padding-bottom: 1rem;
+          padding: 9px 18px;
         }
       }
     }
 
 
 
+    .land__content {//change name
+      display: contents; //not really sure why ?
+      .content__left {//change name
+        display: flex; //optimize this please
+        flex-direction: column;//optimize this please
+        grid-column: auto / span 7;
+        h1 {
+          font-weight: 900;
+          font-size: 50px;
+          line-height: 60px;
+          margin-top: 133px;
+          margin-bottom: 0;
+        }
+        p.subtitle {
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 24px;
+        }
+        a.button {
+            border-radius: 50px;
+            background: #6D07E6;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 2.75;
+            text-align: center; //utility
+            color: #fff;
+            margin-top: 44px;
+            width: 182px;
+            height: 42px;
+        }
+      }
+      .content__right { //change name
+        display: flex; //optimize this please
+        grid-column: auto / span 5;
+        background-image: url("../images/resource42@3x.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .land__cripto { //change name
+        .content__cripto {
+          margin-bottom: 7rem;
+          margin-top: 5rem;
+          h2.middle-title {
+            font-weight: 900;
+            font-size: 34px;
+            line-height: 41px;
+            text-align: center;
+          }
+        }
+    }
+
+    .land__info {
+      display: contents; //not really sure why ?
+
+      .col-5__start-2 {
+        grid-column: 2 / span 5;
+      }
+      .col-8__start-4 {
+        grid-column: 8 / span 4;
+      }
+      .col-8__start-5 {
+        grid-column: 8 / span 5;
+      }
+
+      .info__description-section {
+        display: flex; //optimize this please
+        flex-direction: column;
+        margin: 15px 30px;
+
+        h3.info-title {
+          font-weight: 900;
+          font-size: 30px;
+          line-height: 36px;
+        }
+        p.info-description {
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 22px;
+          text-align: center;
+        }
+        a {
+          &.button {
+            font-weight: normal;
+            font-size: 13.4564px;
+            line-height: 2.75;
+            text-align: center;
+            color: #fff;
+            width: 160px;
+            height: 40px;
+          }
+          &.gradient {
+            background: linear-gradient(0deg, #6D07E6, #6D07E6);
+            border-radius: 48.0586px;
+          }
+        }
+      }
+      .info__img-section {
+        display: flex; //optimize this please
+        &.wallet {
+          background-image: url("../images/wallet@3x.png");
+          background-size: 328px 241px;
+          background-repeat: no-repeat;
+        }
+        &.exchange {
+          background-image: url("../images/exchange@3x.png");
+          background-size: 397px 257px;
+          background-repeat: no-repeat;
+        }
+        &.otc {
+          background-image: url("../images/otc@3x.png");
+          background-size: 341px 253px;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .land__cards {
+      p {
+        grid-column: 2 / span 2;
+      }
+
+    }
+
+    //Utility classes
+    .col__12 {
+      grid-column: auto / span 12;
+    }
+
+    .flex {
+      display: flex;
+    }
+    .justify-start {
+      align-items: flex-start;
+    }
+    .items-center {
+      align-items: center;
+    }
+    .white__space {
+      height: 634px;
+    }
+    .justify-center {
+      justify-content: center;
+    }
+    .side-margins-0 {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 
-  .flex {
-    display: flex;
-  }
 
-  .items-center {
-    align-items: center;
-  }
 }

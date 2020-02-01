@@ -23,7 +23,7 @@ module.exports = {
         rules: [
             {
                 test: /\.pug$/,
-                use: ['html-loader?attrs=false', 'pug-html-loader']
+                use: ['pug-loader']
             },
             {
                 test: /\.scss$/,
@@ -40,6 +40,12 @@ module.exports = {
                     loader: "babel-loader"
                 }
             },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ],
+            }
         ]
     },
 };
