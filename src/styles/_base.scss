@@ -1,0 +1,31 @@
+// Color palette
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #373744;
+  --purple: #4B1FA7;
+  --violet: #6D07E6
+}
+
+$breakpoint: "only screen and (max-width: 1200px)";
+
+@mixin ellipse {
+  position: absolute;
+  width: 298px;
+  height: 298px;
+  left: -179px;
+  top: 2550px;
+  background: linear-gradient(315deg, rgba(255, 255, 255, 0) 0%, rgba(109, 7, 230, 0.1) 100%);
+  transform: rotate(90deg);
+  border-radius: 50%;
+}
+
+.hide-desktop {
+  display: none !important;
+}
+
+@media #{$breakpoint} {
+  .hide-mobile {
+    display: none !important;
+  }
+}

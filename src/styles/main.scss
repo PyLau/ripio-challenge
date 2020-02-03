@@ -1,33 +1,8 @@
 @charset "UTF-8";
 //Typography
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
-// Color palette
-:root {
-  --white: #fff;
-  --black: #000;
-  --gray: #373744;
-  --purple: #4B1FA7;
-  --violet: #6D07E6
-}
-
-$breakpoint: "only screen and (max-width: 1200px)";
-
-@mixin ellipse {
-  position: absolute;
-  width: 298px;
-  height: 298px;
-  left: -179px;
-  top: 2550px;
-  background: linear-gradient(315deg, rgba(255, 255, 255, 0) 0%, rgba(109, 7, 230, 0.1) 100%);
-  transform: rotate(90deg);
-  border-radius: 50%;
-}
-
-@media #{$breakpoint} {
-  .hide-mobile {
-    display: none !important;
-  }
-}
+//Partials
+@import '_base.scss';
 
 body {
   font-family: 'Lato';
@@ -68,7 +43,7 @@ body {
   &.bg__content {//change name
     background-image: url('../images/background-footer.png'), url('../images/background-valores.png'), url('../images/resource42@3x.png') ,url('../images/img-header@3x.png');
     background-repeat: no-repeat;
-    background-position: center bottom, 0 2500px, 50vw 158px, right top;
+    background-position: center bottom, 0 2200px, 50vw 158px, right top;
     @media #{$breakpoint} {
       background-position: center bottom, 0 2500px, center 350px, 0 190px;
       background-size: 100vw 790px, 100vw 1654px, 439px 541px, 100vw 14%;
@@ -276,6 +251,49 @@ body {
       @include ellipse;
     }
 
+    .cards__mobile {
+      @media #{$breakpoint} {
+        display: inline-block !important;
+        width: 320px;
+        height: 460px;
+        margin-left: 200px;
+      }
+      .card__cell {
+        margin-right: 20px;
+        height: 360px;
+      }
+    }
+
+    .card__cell {
+      color: var(--white);
+      h1.side-text {
+        font-weight: 900;
+        font-size: 34px;
+        line-height: 41px;
+      }
+
+      h3.side-description {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      a.card-link {
+        font-size: 16px;
+        line-height: 19px;
+        color: var(--violet);
+      }
+
+      &.card {
+        background: var(--white);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        padding: 48px 30px;
+        margin-bottom: 20px;
+        color: var(--gray);
+      }
+    }
+
     .land__cards {
       display: contents;
       .cards__container {
@@ -293,36 +311,6 @@ body {
           display: flex;
           flex-direction: column;
           justify-content: center;
-        }
-
-        .card__cell {
-          color: var(--white);
-          h1.side-text {
-            font-weight: 900;
-            font-size: 34px;
-            line-height: 41px;
-          }
-
-          h3.side-description {
-            font-weight: 300;
-            font-size: 20px;
-            line-height: 24px;
-          }
-
-          a.card-link {
-            font-size: 16px;
-            line-height: 19px;
-            color: var(--violet);
-          }
-
-          &.card {
-            background: var(--white);
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-            border-radius: 15px;
-            padding: 48px 30px;
-            margin-bottom: 20px;
-            color: var(--gray);
-          }
         }
       }
     }
@@ -439,7 +427,7 @@ body {
       align-items: center;
     }
     .white__space {
-      height: 600px;
+      height: 500px;
     }
     .white__space--150 {
       height: 150px;
