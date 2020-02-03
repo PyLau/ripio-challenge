@@ -40,7 +40,7 @@ body {
       }
   }
 
-  &.bg__content {//change name
+  &.background__content {
     background-image: url('../images/background-footer.png'), url('../images/background-valores.png'), url('../images/resource42@3x.png') ,url('../images/img-header@3x.png');
     background-repeat: no-repeat;
     background-position: center bottom, 0 2200px, 50vw 158px, right top;
@@ -52,7 +52,7 @@ body {
     z-index: -1;
   }
 
-  &.content__wrapper {//change name
+  &.container__wrapper {
     color: var(--gray);
     display: grid;
     grid-gap: 20px;
@@ -115,10 +115,10 @@ body {
 
 
 
-    .land__content {//change name
+    .page__content {
       display: contents;
 
-      .content__left {//change name
+      .content__left {
         display: flex;
         flex-direction: column;
         grid-column: auto / span 7;
@@ -158,13 +158,13 @@ body {
             height: 42px;
         }
       }
-      .content__right { //change name
+      .content__right {
         display: flex;
         grid-column: auto / span 5;
       }
     }
 
-    .land__products {
+    .page__products {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -233,8 +233,8 @@ body {
       }
     }
 
-    .land__cripto { //change name
-        .content__cripto {
+    .page__statement { //change name
+        .statement__content {
           margin-bottom: 7rem;
           margin-top: 5rem;
           h2.middle-title {
@@ -294,7 +294,7 @@ body {
       }
     }
 
-    .land__cards {
+    .page__cards {
       display: contents;
       .cards__container {
         &:first-child {
@@ -387,7 +387,7 @@ body {
           background-position: 50%;
           margin-right: 10px;
         }
-        //TODO: optimize with mixins
+
         .facebook {
           background-image: url(../images/fb_logo.svg);
         }
