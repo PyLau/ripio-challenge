@@ -45,8 +45,8 @@ body {
     background-repeat: no-repeat;
     background-position: center bottom, 0 2200px, 50vw 158px, right top;
     @media #{$breakpoint} {
-      background-position: center bottom, 0 2500px, center 350px, 0 190px;
-      background-size: 100vw 790px, 100vw 1654px, 439px 541px, 100vw 14%;
+      background-position: center bottom, 0 2500px, center 400px, 0 250px;
+      background-size: 100vw 790px, 100vw 1654px, 236px 290px, 100vw 20%;
     }
     background-size: 100vw 790px, 100vw 1654px, 439px 541px, 100vw 1592px;
     z-index: -1;
@@ -62,7 +62,7 @@ body {
     padding: 0 32px 32px 32px;
     max-width: 1329px;
     @media #{$breakpoint} {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 50%);
       padding: 25px 30px 0 30px;
     }
     .menu {
@@ -86,6 +86,9 @@ body {
 
         &:first-child {
           margin-right: 36px;
+          @media #{$breakpoint} {
+            margin-right: 0;
+          }
         }
 
         &:nth-child(2) {
@@ -123,9 +126,10 @@ body {
         flex-direction: column;
         grid-column: auto / span 7;
         @media #{$breakpoint} {
-          grid-column: 6 / span 4;
+          grid-column: 1 / span 2;
           text-align: center;
           font-size: 34px;
+          align-items: center;
         }
 
         h1 {
@@ -161,6 +165,9 @@ body {
       .content__right {
         display: flex;
         grid-column: auto / span 5;
+        @media #{$breakpoint} {
+          grid-column: 2 / span 2;
+        }
       }
     }
 
@@ -170,8 +177,8 @@ body {
       align-items: center;
       flex-direction: column;
       @media #{$breakpoint} {
-        grid-column: 6 / span 4 !important;
-      }
+          grid-column: 1 / span 2
+        }
       .content__product {
         display: flex;
         justify-content: center;
@@ -193,6 +200,11 @@ body {
             background-repeat: no-repeat;
             width: 327px;
             height: 241px;
+            @media #{$breakpoint} {
+              background-image: url("../images/triangle.svg");
+              width: 163px;
+              height: 146px;
+            }
 
           }
           &.exchange {
@@ -200,12 +212,26 @@ body {
             background-repeat: no-repeat;
             width: 397px;
             height: 257px;
+            @media #{$breakpoint} {
+              background-image: none;
+              border: 3px solid var(--light-grey);
+              border-radius: 50%;
+              width: 147px;
+              height: 145px;
+            }
           }
           &.otc {
             background-image: url("../images/otc@3x.png");
             background-repeat: no-repeat;
             width: 341px;
             height: 253px;
+            @media #{$breakpoint} {
+              background-image: none;
+              border: 3px solid var(--light-grey);
+              border-radius: 20px;
+              width: 144px;
+              height: 144px;
+            }
           }
         }
         .info-description {
@@ -237,10 +263,22 @@ body {
         .statement__content {
           margin-bottom: 7rem;
           margin-top: 5rem;
+          @media #{$breakpoint} {
+            margin: 0 40px;
+          }
           h2.middle-title {
             font-weight: 900;
             font-size: 34px;
             line-height: 41px;
+            text-align: center;
+            @media #{$breakpoint} {
+              margin: 0;
+            }
+          }
+          h3.middle-description {
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
             text-align: center;
           }
         }
@@ -299,15 +337,24 @@ body {
       .cards__container {
         &:first-child {
           grid-column: 1 / span 3;
+          @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
         }
 
         &:nth-child(2) {
           grid-column: 5 / span 4;
+          @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
           margin-top: 100px;
         }
 
         &:nth-child(3) {
           grid-column: 9 / span 4;
+          @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -321,15 +368,27 @@ body {
       .footer__block {
         &:first-child {
           grid-column: auto / span 3;
+          @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
         }
         &:nth-child(2) {
           grid-column: 6 / span 2;
+          @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
         }
         &:nth-child(3) {
           grid-column: 8 / span 2;
+          @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
         }
         &:nth-child(4) {
           grid-column: 10 / span 3;
+          @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
         }
       }
       h1.footer__title {
@@ -368,6 +427,9 @@ body {
 
       .disclaimer {
         grid-column: auto / span 7;
+        @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
         h3.footer__items {
           margin: 0;
           font-weight: bold;
@@ -375,6 +437,9 @@ body {
       }
       .social-networks {
         grid-column: auto / span 5;
+        @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
         display: flex;
         flex-direction: row;
         margin-bottom: 144px;
@@ -416,6 +481,9 @@ body {
     //Utility classes
     .col__12 {
       grid-column: auto / span 12;
+      @media #{$breakpoint} {
+          grid-column: 1 / span 2
+        }
     }
     .flex {
       display: flex;
