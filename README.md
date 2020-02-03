@@ -21,6 +21,11 @@ Nice to have:
 - Conocimiento de SEO
 
 --
+## Requirements
+```
+node v12.14.1
+npm v6.13.4
+```
 
 ## Installation
 ```
