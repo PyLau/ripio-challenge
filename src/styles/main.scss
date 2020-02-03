@@ -20,7 +20,7 @@ body {
         color: var(--white);
         width: 182px;
         height: 42px;
-        line-height: 2.75;
+        line-height: 3;
       }
 
       &.gradient {
@@ -50,8 +50,8 @@ body {
     background-size: 100vw 790px, 100vw 1654px, 439px 541px, 100vw 1592px;
     z-index: -1;
     @media #{$breakpoint} {
-      background-position: 0 2500px, center 400px, 0 250px;
-      background-size: 300vw 1654px, 236px 290px, 100vw 20%;
+      background-position: 0 0, 0 2500px, center 400px, 0 250px;
+      background-size: 0 0, 300vw 1654px, 236px 290px, 100vw 20%;
     }
   }
 
