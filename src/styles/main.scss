@@ -1,8 +1,33 @@
-// REMINDER: import normalize
 @charset "UTF-8";
 //Typography
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
 // Color palette
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #373744;
+  --purple: #4B1FA7;
+  --violet: #6D07E6
+}
+
+$breakpoint: "only screen and (max-width: 1200px)";
+
+@mixin ellipse {
+  position: absolute;
+  width: 298px;
+  height: 298px;
+  left: -179px;
+  top: 2550px;
+  background: linear-gradient(315deg, rgba(255, 255, 255, 0) 0%, rgba(109, 7, 230, 0.1) 100%);
+  transform: rotate(90deg);
+  border-radius: 50%;
+}
+
+@media #{$breakpoint} {
+  .hide-mobile {
+    display: none !important;
+  }
+}
 
 body {
   font-family: 'Lato';
@@ -12,57 +37,68 @@ body {
   a {
     cursor: pointer;
     text-decoration: none;
-    color: #373744;
+    color: var(--gray);
       &.button {
         font-weight: normal;
         font-size: 13.4564px;
         text-align: center;
-        color: #fff;
-        width: 160px;
-        height: 40px;
+        color: var(--white);
+        width: 182px;
+        height: 42px;
         line-height: 2.75;
       }
 
       &.gradient {
-        background: linear-gradient(0deg, #6D07E6, #6D07E6);
+        background: linear-gradient(0deg, var(--violet), var(--violet));
         border-radius: 48.0586px;
       }
 
       &.outline {
-        border: 1px solid #000000;
+        border: 1px solid var(--black);
         box-sizing: border-box;
         border-radius: 50px;
         background-color: transparent;
         background-image: none;
         line-height: 17px;
         padding: 9px 18px;
-        color: #373744;
+        color: var(--gray);
       }
   }
 
   &.bg__content {//change name
     background-image: url('../images/background-footer.png'), url('../images/background-valores.png'), url('../images/resource42@3x.png') ,url('../images/img-header@3x.png');
     background-repeat: no-repeat;
-    background-position: center bottom, 0 2500px, 1050px 158px, right top;
+    background-position: center bottom, 0 2500px, 50vw 158px, right top;
+    @media #{$breakpoint} {
+      background-position: center bottom, 0 2500px, center 350px, 0 190px;
+      background-size: 100vw 790px, 100vw 1654px, 439px 541px, 100vw 14%;
+    }
     background-size: 100vw 790px, 100vw 1654px, 439px 541px, 100vw 1592px;
     z-index: -1;
   }
 
   &.content__wrapper {//change name
-    color: #373744;
+    color: var(--gray);
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(12, 60px);
-    justify-content: center; //utility
+    justify-content: center;
     margin: auto;
     padding: 0 32px 32px 32px;
     max-width: 1329px;
-
+    @media #{$breakpoint} {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 25px 30px 0 30px;
+    }
     .menu {
-      display: flex; //utility
+      display: flex;
       justify-content: space-between;
       margin-top: 20px;
       z-index: 99999;
+
+      @media #{$breakpoint} {
+        justify-content: center;
+      }
     }
 
     .menu__left, .menu__right {
@@ -105,17 +141,30 @@ body {
 
 
     .land__content {//change name
-      display: contents; //not really sure why ?
+      display: contents;
+
       .content__left {//change name
-        display: flex; //optimize this please
-        flex-direction: column;//optimize this please
+        display: flex;
+        flex-direction: column;
         grid-column: auto / span 7;
+        @media #{$breakpoint} {
+          grid-column: 6 / span 4;
+          text-align: center;
+          font-size: 34px;
+        }
+
         h1 {
           font-weight: 900;
           font-size: 50px;
           line-height: 60px;
           margin-top: 133px;
           margin-bottom: 0;
+          @media #{$breakpoint} {
+            margin-top: 0;
+            line-height: 41px;
+            font-size: 34px;
+            align-items: center;
+          }
         }
         p.subtitle {
           font-weight: 300;
@@ -124,19 +173,88 @@ body {
         }
         a.button {
             border-radius: 50px;
-            background: #6D07E6;
+            background: var(--violet);
             font-weight: 500;
             font-size: 14px;
-            text-align: center; //utility
-            color: #fff;
+            text-align: center;
+            color: var(--white);
             margin-top: 44px;
             width: 182px;
             height: 42px;
         }
       }
       .content__right { //change name
-        display: flex; //optimize this please
+        display: flex;
         grid-column: auto / span 5;
+      }
+    }
+
+    .land__products {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      @media #{$breakpoint} {
+        grid-column: 6 / span 4 !important;
+      }
+      .content__product {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0 0 0 ;
+        &:nth-child(odd) {
+          flex-direction: row;
+        }
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+        @media #{$breakpoint} {
+          flex-direction: column-reverse !important;
+        }
+        .info__img {
+          margin-top: 30px;
+          &.wallet {
+            background-image: url("../images/wallet@3x.png");
+            background-repeat: no-repeat;
+            width: 327px;
+            height: 241px;
+
+          }
+          &.exchange {
+            background-image: url("../images/exchange@3x.png");
+            background-repeat: no-repeat;
+            width: 397px;
+            height: 257px;
+          }
+          &.otc {
+            background-image: url("../images/otc@3x.png");
+            background-repeat: no-repeat;
+            width: 341px;
+            height: 253px;
+          }
+        }
+        .info-description {
+          flex: 1;
+          .info-title {
+            font-weight: 900;
+            font-size: 30px;
+            line-height: 36px;
+            text-align: center;
+            padding: 30px 0;
+          }
+          div.description-text {
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            padding-bottom: 30px;
+          }
+          a.button.gradient {
+            margin: 0 auto;
+            display: block;
+          }
+        }
+
       }
     }
 
@@ -153,55 +271,9 @@ body {
         }
     }
 
-    .land__info {
-      display: contents; //not really sure why ?
 
-      .col-5__start-2 {
-        grid-column: 2 / span 5;
-      }
-      .col-8__start-4 {
-        grid-column: 8 / span 4;
-      }
-      .col-8__start-5 {
-        grid-column: 8 / span 5;
-      }
-
-      .info__description-section {
-        display: flex; //optimize this please
-        flex-direction: column;
-        margin: 15px 30px;
-
-        h3.info-title {
-          font-weight: 900;
-          font-size: 30px;
-          line-height: 36px;
-        }
-        p.info-description {
-          font-weight: 300;
-          font-size: 18px;
-          line-height: 22px;
-          text-align: center;
-        }
-
-      }
-      .info__img-section {
-        display: flex; //optimize this please
-        &.wallet {
-          background-image: url("../images/wallet@3x.png");
-          background-size: 328px 241px;
-          background-repeat: no-repeat;
-        }
-        &.exchange {
-          background-image: url("../images/exchange@3x.png");
-          background-size: 397px 257px;
-          background-repeat: no-repeat;
-        }
-        &.otc {
-          background-image: url("../images/otc@3x.png");
-          background-size: 341px 253px;
-          background-repeat: no-repeat;
-        }
-      }
+    section.ellipse {
+      @include ellipse;
     }
 
     .land__cards {
@@ -224,7 +296,7 @@ body {
         }
 
         .card__cell {
-          color: #fff;
+          color: var(--white);
           h1.side-text {
             font-weight: 900;
             font-size: 34px;
@@ -240,23 +312,23 @@ body {
           a.card-link {
             font-size: 16px;
             line-height: 19px;
-            color: #6D07E6;
+            color: var(--violet);
           }
 
           &.card {
-            background: #FFFFFF;
+            background: var(--white);
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
             border-radius: 15px;
             padding: 48px 30px;
             margin-bottom: 20px;
-            color: #373744;
+            color: var(--gray);
           }
         }
       }
     }
 
     footer.footer__container {
-      color: #fff;
+      color: var(--white);
       display: contents;
       .footer__block {
         &:first-child {
@@ -290,8 +362,8 @@ body {
       }
 
       a.button.gradient {
-        color: #4B1FA7;
-        background: #fff;
+        color: var(--purple);
+        background: var(--white);
         display: block;
         width: 100%;
       }
@@ -299,8 +371,8 @@ body {
       a.button.outline {
         display: block;
         width: 100%;
-        color: #fff;
-        border: #fff solid 1px;
+        color: var(--white);
+        border: var(--white) solid 1px;
       }
       hr {
         margin: 57px 0px 0px 0px
@@ -322,7 +394,7 @@ body {
           background-repeat: no-repeat;
           width: 34px;
           height: 34px;
-          border: 1px solid #FFFFFF;
+          border: 1px solid var(--white);
           border-radius: 50%;
           background-position: 50%;
           margin-right: 10px;
@@ -352,7 +424,6 @@ body {
         }
       }
     }
-
 
     //Utility classes
     .col__12 {

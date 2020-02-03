@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        title Ripio Challenge Web Developer
+        title Ripio Challenge - Web Developer
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='description', content='Ripio Web Challenge')
@@ -10,7 +10,6 @@ html
     body.content__wrapper.bg__content
         section.menu.col__12
             div.menu__left.flex.items-center
-                //u can do it better ->
                 div.menu__item
                     svg(width='67' height='32' viewbox='0 0 68 32' fill='none' xmlns='http://www.w3.org/2000/svg')
                         g(clip-path='url(#clip0)')
@@ -25,57 +24,54 @@ html
                             clippath#clip0
                                 rect(x='0.744141' width='67' height='32' fill='white')
 
-                div.menu__item
+                div.menu__item.hide-mobile
                     div.dropdown
                         a(href='').dropdown__button Comunidad
-                div.menu__item
+                div.menu__item.hide-mobile
                     div.dropdown
                         a(href='').dropdown__button Market
-                div.menu__item
+                div.menu__item.hide-mobile
                     div.dropdown
                         a(href='').dropdown__button Más productos
                             svg.icon-chevron(width='11', height='11', viewBox='0 0 10 6', fill='none', xmlns='http://www.w3.org/2000/svg')
                                 path(d='M0.744141 1L4.74414 5L8.74414 1', stroke='black')
-            div.menu__right.flex.items-center
-                //u can do it better ->
+            div.menu__right.flex.items-center.hide-mobile
                 div.menu__item
                     a(href='') Ingresar
                 div.menu__item
                     a(href='').button.outline Registrate
         section.land__content.col__12
             div.content__left.justify-start
-                h1
-                    span Descubrí la nueva economía digital
+                h1 Descubrí la nueva economía digital
                 p.subtitle Empezá el camino de la innovación financiera.
                 a.button Abrir mi cuenta
-            div.content__right
+            div.content__right.hide-mobile
         section.white__space.col__12
         section.land__cripto.col__12
             div.content__cripto
                 h2.middle-title Qué podés hacer en Ripio
-        section.land__info.col__12
-            div.info__description-section.col-5__start-2.items-center
-                h3.info-title Cuenta en pesos
-                p.info-description Activá tu cuenta digital gratis y gestioná tu dinero como prefieras.
-                a.button.gradient Más información
-            div.info__img-section.wallet.col-8__start-4
-        section.white__space--150.col__12
-        section.land__info.col__12
-            div.info__img-section.exchange.col-5__start-2
-            div.info__description-section.items-center.col-8__start-5
-                h3.info-title Exchange
-                p.info-description.side-margins-0 Compra y vende criptomonedas. <br> El precio lo pones tú.
-                a.button.gradient Más información
-        section.white__space--150.col__12
-        section.land__info.col__12
-            div.info__description-section.col-5__start-2.items-center
-                h3.info-title OTC
-                p.info-description Trading para instituciones e inversores mayoristas.
-                a.button.gradient Más información
-            div.info__img-section.otc.col-8__start-4
-        section.box
+        section.land__products.col__12
+            div.content__product
+                div.info-description
+                    div.info-title Cuenta en pesos
+                    div.description-text Activá tu cuenta digital gratis y gestioná tu dinero como prefieras.
+                    a.button.gradient Más información
+                div.info__img.wallet
+            div.content__product
+                div.info-description
+                    div.info-title Exchange
+                    div.description-text Compra y vende criptomonedas. El precio lo pones tú.
+                    a.button.gradient Más información
+                div.info__img.exchange
+            div.content__product
+                div.info-description
+                    div.info-title OTC
+                    div.description-text Trading para instituciones e inversores mayoristas.
+                    a.button.gradient Más información
+                div.info__img.otc
         section.white__space.col__12
-        section.land__cards.col__12
+        section.ellipse
+        section.land__cards.col__12.hide-mobile
             div.cards__container
                 div.card__cell
                     h1.side-text Protegemos lo más valioso para vos
@@ -117,7 +113,7 @@ html
                     h3.side-description Mais de 250.000 pessoas escolheram utilizar nossa plataforma.
                     a(href='').card-link Entenda
         section.white__space.col__12
-        footer.col__12.footer__container
+        footer.col__12.footer__container.hide-mobile
             div.footer__block
                 h1.footer__title Empezá el camino de la innovación financiera.
                 h1
