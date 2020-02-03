@@ -44,12 +44,12 @@ body {
     background-image: url('../images/background-footer.png'), url('../images/background-valores.png'), url('../images/resource42@3x.png') ,url('../images/img-header@3x.png');
     background-repeat: no-repeat;
     background-position: center bottom, 0 2200px, 50vw 158px, right top;
-    @media #{$breakpoint} {
-      background-position: center bottom, 0 2500px, center 400px, 0 250px;
-      background-size: 100vw 790px, 100vw 1654px, 236px 290px, 100vw 20%;
-    }
     background-size: 100vw 790px, 100vw 1654px, 439px 541px, 100vw 1592px;
     z-index: -1;
+    @media #{$breakpoint} {
+      background-position: center bottom, 0 2500px, center 400px, 0 250px;
+      background-size: 100vw 100px, 300vw 1654px, 236px 290px, 100vw 20%;
+    }
   }
 
   &.container__wrapper {
@@ -286,7 +286,7 @@ body {
 
 
     section.ellipse {
-      @include ellipse;
+      @include ellipse(298px, -179px, 2200px);
     }
 
     .cards__mobile {
@@ -294,11 +294,10 @@ body {
         display: inline-block !important;
         width: 320px;
         height: 460px;
-        margin-left: 200px;
+        margin-left: 10px;
       }
       .card__cell {
         margin-right: 20px;
-        height: 360px;
       }
     }
 
@@ -330,6 +329,13 @@ body {
         margin-bottom: 20px;
         color: var(--gray);
       }
+      @media #{$breakpoint} {
+        &.card__mobile-title {
+          text-align: center;
+          margin: 0 35px;
+        }
+      }
+
     }
 
     .page__cards {
